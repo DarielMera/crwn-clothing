@@ -1,8 +1,18 @@
 import { initializeApp } from "firebase/app"
+// importing from the firebae sdk the initializedapp function - from the app section
+// this will help me conect my declared app on firebae with my front end app here
 import {getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword } from "firebase/auth"
-
+// importing 4 functions from the firebase / auth module
+// this will help me authenticate creagted users; by googleauthprovider credentials or by providing email and password
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore"
+// importing 4 functions from the firebase/firestre section
+// this kit will help me creagte a firestore database; creagte a connection and get or set documents
 
+
+
+
+// this next object is a copy of the online created firebase credentials after declaring 
+// the app on firebase. 
 const firebaseConfig = {
 	apiKey: "AIzaSyAnD1iaQGIPhhPGLlVS3Gaw12vlUAMucEU",
 	authDomain: "crwn-clothing-db-a345e.firebaseapp.com",
@@ -13,6 +23,8 @@ const firebaseConfig = {
 }
 
 // Initialize Firebase
+// i pass the above object of credentials to the initializeapp function to initialize the app
+
 const firebaseApp = initializeApp(firebaseConfig)
 
 const googleProvider = new GoogleAuthProvider()
