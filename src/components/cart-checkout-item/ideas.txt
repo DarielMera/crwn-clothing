@@ -1,0 +1,37 @@
+OVERVIEW : CHECK OUT BUTTON FUNCTIONALITY
+
+---------CHECK OUT BUTTON--------
+- declare router inside app
+- declare link inside navigation
+- onclick it redirect me to the check out page
+- dont forge the outlet ( i think is already there)
+
+----- COMPONENT DECLARATIONS -----
+- use cart-context for data coming from cartItems
+- declare cart-checkout-items
+- declare cart-checkout-lists
+- map thru cartItems array and from each iteration call the cart checkout item components 
+
+
+- follow visual components ideas for structure
+- see ideas from other components
+- see ideas from the provided css file 
+
+
+- should i use grid ? 
+
+----CHEVRON FEATURES-----
+- figure out how to use the chevron arrows left and right 
+- ex: &u9123 or use google icons
+- quantity: comes from the updated cartItems array
+- I should call the same function in context that allows to add to quantity
+- but also substract to quantity
+
+
+- from the visual i conclude 
+    1. top info is statick
+    2. from cartItems I will need : imageUrl, name, quantity, price
+    3. also an x that will remove the component
+
+
+

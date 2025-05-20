@@ -9,14 +9,11 @@ import "./product-card.styles.scss"
 const ProductCard = ({ product }) => {
 	const { name, price, imageUrl } = product
 
-	const { addItemTocart, SumTotalCartItem } = useContext(CartContext)
+	const { addItemTocart } = useContext(CartContext)
 
 	const addProductToCart = () => {
-		SumTotalCartItem()
 		 return addItemTocart(product)
 		}
-
-
 
 	return (
 		<div className="product-card-container">

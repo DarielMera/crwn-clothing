@@ -23,3 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 README.md
+geminiPrompts.txt
+cart.context copy.jsx
