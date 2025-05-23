@@ -1,30 +1,25 @@
 import { useState } from "react"
 
 import FormInput from "../form-input/form-input.component"
-import Button from "../button/button.component"
+import { Button, BUTTON_TYPE_CLASSES } from "../button/button.component"
 
 import {
 	createAuthUserWithEmailAndPassword,
 	createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils"
 
-
-import { signOut } from "firebase/auth"
-
 import "./sign-up-form.styles.scss"
-
 
 const defaultFormFields = {
 	displayName: "",
 	email: "",
 	password: "",
-	confirmPassword: ""
+	confirmPassword: "",
 }
 
 const SignUpForm = () => {
 	const [formFields, setFormFields] = useState(defaultFormFields)
 	const { displayName, email, password, confirmPassword } = formFields
-
 
 	const resetFormFields = () => {
 		setFormFields(defaultFormFields)
@@ -97,12 +92,9 @@ const SignUpForm = () => {
 					value={confirmPassword}
 				/>
 
-				<Button 
-				buttonType="inverted" 
-				type="submit">
+				<Button type="submit" buttonType={BUTTON_TYPE_CLASSES.inverted}>
 					Sign Up
 				</Button>
-				
 			</form>
 		</div>
 	)

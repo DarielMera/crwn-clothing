@@ -1,21 +1,21 @@
 import { useContext } from "react"
 
-import { ReactComponent as ShoppingIcon } from "../../assets/shopping-bag.svg"
-
 import { CartContext } from "../../context/cart.context"
 
-import "./cart-icon.styles.scss"
+import { CartIconContainer, CartShoppingIcon, CartItemCount } from "./cart-icon.styles.jsx"
+
+import "./cart-icon.styles.jsx"
 
 const CartIcon = () => {
-	const { visibility, setVisibility, totalItemsInCart} = useContext(CartContext)
+	const { visibility, setVisibility, totalItemsInCart } = useContext(CartContext)
 
 	const toggleVisibility = () => setVisibility(!visibility)
 
 	return (
-		<div className="cart-icon-container" onClick={toggleVisibility}>
-			<ShoppingIcon className="shopping-icon" />
-			<span className="item-count">{totalItemsInCart}</span>
-		</div>
+		<CartIconContainer onClick={toggleVisibility}>
+			<CartShoppingIcon className="shopping-icon" />
+			<CartItemCount>{totalItemsInCart}</CartItemCount>
+		</CartIconContainer>
 	)
 }
 

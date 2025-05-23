@@ -2,7 +2,16 @@ import { useContext } from "react"
 
 import { CartContext } from "../../context/cart.context"
 
-import "./cart-checkout-item.styles.scss"
+import {
+	CartCheckOutItemContainer, 
+	CartCheckOutItemDetails, 
+	CartCheckOutItemImg,
+	CartCheckOutQuantityContainer,
+	CartCheckOutName,
+	CartCheckOutQuantity,
+	CartCheckOutItemChevronButton,
+	CartCheckOutRemoveButton
+} from "./cart-checkout-item.styles"
 
 const CartCheckOutItem = ({ cartItem }) => {
 	const { id, name, imageUrl, price, quantity } = cartItem
@@ -17,36 +26,34 @@ const CartCheckOutItem = ({ cartItem }) => {
 	const removeProduct = () => removeProductFromCheckout(id)
 
 	return (
-		<div className="cart-checkout-item-container">
-			<div className="cart-checkout-item-details">
-				<img src={imageUrl} alt={`${name}`} />
+		<CartCheckOutItemContainer>
+			<CartCheckOutItemDetails>
+				<CartCheckOutItemImg src={imageUrl} alt={`${name}`} />
 
-				<span className="cart-checkout-name">{name}</span>
+				<CartCheckOutName>{name}</CartCheckOutName>
 
-				<span className="cart-checkout-quantity-container">
-					<button
-						className="cart-checkout-chevron-btn"
+				<CartCheckOutQuantityContainer>
+					<CartCheckOutItemChevronButton
 						type="button"
 						onClick={decrementProductQuantity}>
 						<i className="fa fa-chevron-left"></i>
-					</button>
+					</CartCheckOutItemChevronButton>
 
-					<span>{quantity}</span>
+					<CartCheckOutQuantity>{quantity}</CartCheckOutQuantity>
 
-					<button
-						className="cart-checkout-chevron-btn"
+					<CartCheckOutItemChevronButton
 						type="button"
 						onClick={incrementProductQuantity}>
 						<i className="fa fa-chevron-right"></i>
-					</button>
-				</span>
+					</CartCheckOutItemChevronButton>
+				</CartCheckOutQuantityContainer>
 
 				<span>${price}</span>
-				<button className="cart-checkout-remove-button" onClick={removeProduct}>
+				<CartCheckOutRemoveButton onClick={removeProduct}>
 					X
-				</button>
-			</div>
-		</div>
+				</CartCheckOutRemoveButton>
+			</CartCheckOutItemDetails>
+		</CartCheckOutItemContainer>
 	)
 }
 
